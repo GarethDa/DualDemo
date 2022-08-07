@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Spin+FallPlat.unity
+- path: Assets/Scenes/Dodgeball.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
