@@ -15,7 +15,7 @@ public class BallBehaviour : MonoBehaviour
     {
         //Find the player camera and player objects
         PlayerCam = GameObject.Find("Player Camera");
-        PlayerObject = GameObject.Find("PlayerV2").GetComponent<PlayerV2>();
+        PlayerObject = GameObject.Find("PlayerFP").GetComponent<PlayerV2>();
     }
 
     // Update is called once per frame
