@@ -8,14 +8,14 @@ public class BallBehaviour : MonoBehaviour
     private bool isHeld = false;
 
     private GameObject PlayerCam;
-    private PlayerV2 PlayerObject;
+    private FpMovement PlayerObject;
     [SerializeField] [Range(500.0f, 1500.0f)] private float ThrowForce = 800.0f;
 
     void Start()
     {
         //Find the player camera and player objects
         PlayerCam = GameObject.Find("Player Camera");
-        PlayerObject = GameObject.Find("PlayerFP").GetComponent<PlayerV2>();
+        PlayerObject = GameObject.Find("PlayerFP").GetComponent<FpMovement>();
     }
 
     // Update is called once per frame
