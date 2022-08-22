@@ -340,10 +340,11 @@
 "Assets/Scripts/BallBehaviour.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/FallingPlatBehaviour.cs"
+"Assets/Scripts/FpMovement.cs"
 "Assets/Scripts/MoveCamera.cs"
-"Assets/Scripts/PlayerController.cs"
-"Assets/Scripts/PlayerV2.cs"
 "Assets/Scripts/SpinnerBehaviour.cs"
+"Assets/Scripts/TpCamera.cs"
+"Assets/Scripts/TpMovement.cs"
 -langversion:9.0
 
 /deterministic
