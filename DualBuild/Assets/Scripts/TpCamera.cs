@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class TpCamera : MonoBehaviour
 {
@@ -8,14 +9,24 @@ public class TpCamera : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform playerObj;
     [SerializeField] private Rigidbody rBody;
+    [SerializeField] private GameObject cMachine;
 
     [SerializeField][Range(5.0f, 30.0f)] private float rotSpeed = 10.0f;
+
+    [SerializeField] [Range(0.0f, 50.0f)] private float offset = 5.0f;
+
+    private CinemachineFreeLook virtualCam;
+
+    private CinemachineComposer composer;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        virtualCam = cMachine.GetComponent<CinemachineFreeLook>();
+        composer = virtualCam.GetRig(1).GetCinemachineComponent<CinemachineComposer>();
     }
 
     // Update is called once per frame
@@ -32,5 +43,17 @@ public class TpCamera : MonoBehaviour
 
         //If the player has input a movement, spherically lerp between the current forward and the new direction
         if (inputDir != Vector3.zero) playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotSpeed);
+
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            virtualCam.m_Lens.FieldOfView = 40;
+            composer.m_TrackedObjectOffset.x = offset;
+        }
+
+        else
+        {
+            virtualCam.m_Lens.FieldOfView = 50;
+            composer.m_TrackedObjectOffset.x = 0;
+        }
     }
 }
