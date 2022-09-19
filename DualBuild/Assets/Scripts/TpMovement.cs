@@ -9,17 +9,21 @@ public class TpMovement : MonoBehaviour
     [SerializeField] [Range(3.0f, 20.0f)] private float jumpForce = 10.0f;
     [SerializeField] [Range(0.0f, 10.0f)] private float groundDrag = 5.0f;
     [SerializeField] [Range(0.1f, 1.0f)] private float airSlowdown = 0.3f;
+    [SerializeField] [Range(5.0f, 30.0f)] private float rotSpeed = 10.0f;
 
     [Header("Ground Check")]
     [SerializeField] private LayerMask floorMask;
     [SerializeField] private Transform feetTransform;
 
-    public Transform orientation;
+    [Header("Rotation")]
+    [SerializeField] private Transform orientation;
+    [SerializeField] private Transform playerObj;
+    [SerializeField] private Camera playerCam;
 
     float horizontalInput;
     float verticalInput;
 
-    bool isJumping;
+    //bool isJumping;
 
     Vector3 moveDir;
 
@@ -32,12 +36,26 @@ public class TpMovement : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody>();
         rBody.freezeRotation = true;
+
+        //player = this.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         MyInput();
+        
+        //Rotate orientation
+        Vector3 viewDir = transform.position - new Vector3(playerCam.transform.position.x, transform.position.y, playerCam.transform.position.z);
+        orientation.forward = viewDir.normalized;
+
+        //Rotate playerObj
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        //If the player has input a movement, spherically lerp between the current forward and the new direction
+        if (inputDir != Vector3.zero) playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotSpeed);
     }
 
     private void FixedUpdate()

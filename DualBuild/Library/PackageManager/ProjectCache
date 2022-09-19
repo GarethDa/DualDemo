@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637954990573226959
-    m_Hash: 789734228
+      ticks: 637990264669743987
+    m_Hash: 1652179390
   m_LockFileStatus:
     m_FilePath: C:/Users/Gareth/Desktop/DualDemo/DualBuild/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637954991539256623
-    m_Hash: 532207012
+      ticks: 637990264670714871
+    m_Hash: 2611465961
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,12 +22,12 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/Gareth/Desktop/DualDemo/DualBuild/Packages
 m_EditorVersion: 2021.3.7f1 (24e8595d6d43)
 m_ResolvedPackages:
-- packageId: com.unity.cinemachine@2.8.6
+- packageId: com.unity.cinemachine@2.9.1
   testable: 0
   isDirectDependency: 1
-  version: 2.8.6
+  version: 2.9.1
   source: 1
-  resolvedPath: C:\Users\Gareth\Desktop\DualDemo\DualBuild\Library\PackageCache\com.unity.cinemachine@2.8.6
+  resolvedPath: C:\Users\Gareth\Desktop\DualDemo\DualBuild\Library\PackageCache\com.unity.cinemachine@2.9.1
   assetPath: Packages/com.unity.cinemachine
   name: com.unity.cinemachine
   displayName: Cinemachine
@@ -86,6 +86,7 @@ m_ResolvedPackages:
     - 2.6.11
     - 2.6.14
     - 2.6.15
+    - 2.6.17
     - 2.7.1
     - 2.7.2
     - 2.7.3
@@ -102,15 +103,29 @@ m_ResolvedPackages:
     - 2.8.3
     - 2.8.4
     - 2.8.6
+    - 2.8.9
     - 2.9.0-pre.1
     - 2.9.0-pre.6
+    - 2.9.1
     compatible:
     - 2.8.6
+    - 2.8.9
     - 2.9.0-pre.1
     - 2.9.0-pre.6
-    verified: 2.8.6
-  dependencies: []
-  resolvedDependencies: []
+    - 2.9.1
+    verified: 2.8.9
+  dependencies:
+  - name: com.unity.test-framework
+    version: 1.1.31
+  resolvedDependencies:
+  - name: com.unity.test-framework
+    version: 1.1.31
+  - name: com.unity.ext.nunit
+    version: 1.0.6
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
   keywords:
   - camera
   - follow
@@ -143,13 +158,13 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637891007790000000
+  datePublishedTicks: 637975495910000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
-    revision: 5e26d3cd08865a98219c0d2d3a8cc689018dd75b
+    revision: 7d4ab17f95806756d588695aa0e7e83c16618082
     path: 
   unityLifecycle:
     version: 2.8.6
@@ -2814,10 +2829,25 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 1.0.1
+    - 1.1.0-pre.7
+    - 1.1.0-pre.8
+    - 1.1.0-pre.9
+    - 1.1.0-pre.10
+    - 1.1.0-pre.11
+    - 1.1.0-pre.41
+    - 1.1.0-pre.69
+    - 1.2.0
+    - 1.3.1
+    - 1.3.2
+    - 1.4.0
+    - 1.4.1
     - 1.4.2
+    - 1.4.3
     compatible:
     - 1.4.2
-    verified: 1.4.2
+    - 1.4.3
+    verified: 1.4.3
   dependencies:
   - name: com.unity.modules.unitywebrequest
     version: 1.0.0
@@ -2842,7 +2872,7 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637919618520000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -2882,6 +2912,18 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 1.0.0-preview.2
+    - 1.0.0-preview.3
+    - 1.0.0-preview.4
+    - 1.0.1-preview.1
+    - 1.1.2
+    - 2.0.0-preview
+    - 2.0.0-preview.1
+    - 2.0.0-preview.2
+    - 2.0.0
+    - 2.0.1-preview.1
+    - 2.0.2
+    - 3.0.1
     - 3.0.2
     compatible:
     - 3.0.2
@@ -2898,7 +2940,7 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637846828220000000
   documentationUrl: 
   hasRepository: 1
   repository:
